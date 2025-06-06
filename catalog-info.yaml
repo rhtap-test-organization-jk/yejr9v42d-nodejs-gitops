@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: yejr9v42d-nodejs-gitops
+  description: This is GitOps manifest for yejr9v42d-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=yejr9v42d-nodejs
+    backstage.io/kubernetes-id: yejr9v42d-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: yejr9v42d-nodejs-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:yejr9v42d-nodejs
